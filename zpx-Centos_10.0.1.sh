@@ -85,6 +85,9 @@ echo -e "#                                                            #"
 echo -e "# If you selected additional options during the CentOS       #"
 echo -e "# install please consider reinstalling without them.         #"
 echo -e "#                                                            #"
+echo -e "# This Also install Postgrey and SpamAssassin (Antispam)     #"
+echo -e "# and Intergate them into postfix with you doing anything    #"
+echo -e "#                                                            #"
 echo -e "##############################################################"
 
     #to remedy some problems of compatibility use of mirror centos.org to all users
