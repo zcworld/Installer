@@ -136,7 +136,7 @@ apt-get upgrade -yqq
 # We disable the DPKG prompts before we run the software install to enable fully automated install.
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get install -qqy mysql-server mysql-server apache2 libapache2-mod-php5 libapache2-mod-bw php5-common php5-cli php5-mysql php5-gd php5-mcrypt php5-curl php-pear php5-imap php5-xmlrpc php5-xsl zip webalizer build-essential bash-completion dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-common dovecot-managesieved dovecot-lmtpd postfix postfix-mysql libsasl2-modules-sql libsasl2-modules proftpd-mod-mysql bind9 bind9utils
+apt-get install -qqy at mysql-server mysql-server apache2 libapache2-mod-php5 libapache2-mod-bw php5-common php5-cli php5-mysql php5-gd php5-mcrypt php5-curl php-pear php5-imap php5-xmlrpc php5-xsl zip webalizer build-essential bash-completion dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-common dovecot-managesieved dovecot-lmtpd postfix postfix-mysql libsasl2-modules-sql libsasl2-modules proftpd-mod-mysql bind9 bind9utils
 
 # Generation of random passwords
 password=`passwordgen`;
@@ -178,6 +178,7 @@ chmod +x /etc/zpanel/panel/bin/zppy
 chmod +x /etc/zpanel/panel/bin/setso
 cp -R /etc/zpanel/panel/etc/build/config_packs/ubuntu_12_04/. /etc/zpanel/configs
 wget https://raw.githubusercontent.com/zcworld/zpanelx/master/modules/apache_admin/hooks/OnDaemonRun.hook.php_u14 -O /etc/zpanel/panel/modules/apache_admin/hooks/OnDaemonRun.hook.php
+wget https://raw.githubusercontent.com/zcworld/zpanelx/master/etc/build/config_packs/ubuntu_12_04/zpanelx-install/sql/zpanel_core.sql -O /etc/zpanel/configs/zpanelx-install/sql/zpanel_core.sql
 # set password after test connexion
 cc -o /etc/zpanel/panel/bin/zsudo /etc/zpanel/configs/bin/zsudo.c
 sudo chown root /etc/zpanel/panel/bin/zsudo
