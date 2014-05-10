@@ -1,4 +1,4 @@
-   
+
 # ***************************************
 # * Common installer functions          *
 # ***************************************
@@ -119,7 +119,7 @@ apt-get -y install sudo wget vim make zip unzip git debconf-utils
 
 # We now clone the ZPX software from GitHub
 echo "Downloading ZPanel, Please wait, this may take several minutes, the installer will continue after this is complete!"
-git clone https://github.com/zcworld/zpanelx.git
+git clone https://github.com/zpanel/zpanelx.git
 cd zpanelx/
 git checkout $ZPX_VERSION
 mkdir ../zp_install_cache/
@@ -182,7 +182,14 @@ sudo chown root /etc/zpanel/panel/bin/zsudo
 chmod +s /etc/zpanel/panel/bin/zsudo
 
 # MySQL specific installation tasks...
+mysql_install_db
 service mysql start
+service mysql  stop
+kill $(cat /var/run/mysqld/mysqld.pid)
+rm -R -f /var/lib/mysql/*
+mysql_install_db
+service mysql start
+/usr/bin/mysqladmin -u root password $password
 mysqladmin -u root password $password
 until mysql -u root -p$password -e ";" > /dev/null 2>&1 ; do
 read -s -p "enter your root mysql password : " password
