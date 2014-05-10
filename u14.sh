@@ -176,9 +176,8 @@ ln -s /etc/zpanel/panel/bin/setso /usr/bin/setso
 ln -s /etc/zpanel/panel/bin/setzadmin /usr/bin/setzadmin
 chmod +x /etc/zpanel/panel/bin/zppy
 chmod +x /etc/zpanel/panel/bin/setso
-cp -R /etc/zpanel/panel/etc/build/config_packs/ubuntu_12_04/. /etc/zpanel/configs/
-wget https://raw.githubusercontent.com/zcworld/zpanelx/master/modules/apache_admin/hooks/OnDaemonRun.hook.php_u14
-mv -f ./OnDaemonRun.hook.php_u14 /etc/zpanel/panel/modules/apache_admin/OnDaemonRun.hook.php
+cp -R /etc/zpanel/panel/etc/build/config_packs/ubuntu_12_04/. /etc/zpanel/configs
+mv -f /etc/zpanel/panel/modules/apache_admin/OnDaemonRun.hook.php_u14 /etc/zpanel/panel/modules/apache_admin/OnDaemonRun.hook.php
 # set password after test connexion
 cc -o /etc/zpanel/panel/bin/zsudo /etc/zpanel/configs/bin/zsudo.c
 sudo chown root /etc/zpanel/panel/bin/zsudo
