@@ -1,4 +1,0 @@
-Installer
-=========
-
-Installing
